@@ -17,6 +17,11 @@ namespace Sweepstakes
             {
                 return name;
             }
+            set
+            {
+                name = value;
+            }
+
         }
 
         //constructor
