@@ -42,13 +42,27 @@ namespace Sweepstakes
         public Contestant PickWinner()
         {
             Random random = new Random();
-            int winner = random.Next(1, contestants.Count);
+            int winner = random.Next(1, contestants.Count);            
             return contestants[winner];
         }
         public void PrintContestantInfo(Contestant contestant)
         {
             Console.WriteLine($"{contestant.RegistrationNumber} " +
                 $"{contestant.FirstName} {contestant.LastName} {contestant.EmailAddress}");
+        }
+        public void NotifyContestants(Contestant winner)
+        {
+            for (int i = 1; i <= contestants.Count; i++)
+            {
+                if(contestants[i] == winner)
+                {
+                    Console.WriteLine($"Congrats {contestants[i].FirstName} {contestants[i].LastName}, you won!");
+                }
+                else
+                {
+                    Console.WriteLine($"Thanks for playing, better luck next time!");
+                }
+            }
         }
     }
 }
